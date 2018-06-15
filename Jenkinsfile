@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Version test') {
             steps {
-                sh 'cmd --version'
+                bat 'cmd --version'
             }
         }
     }
