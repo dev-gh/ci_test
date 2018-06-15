@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {				
 				script {
-					if(fileExists('params.CLIENT_DIR/x64/Release/webrtc-sendrecv-client-2017.exe')) {
+					if(fileExists('params.CLIENT_DIR/test')) {
 						echo 'WebRTC client executable is found'
 					} else {
 						error 'WebRTC client executable is not found'						
