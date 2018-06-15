@@ -10,12 +10,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {				
-				// Currently Docker API seems is not fully supported on Windows (https://issues.jenkins-ci.org/browse/JENKINS-34454)
-				// so use batch instead
-				echo '3'
-				echo params.CLIENT_DIR
-				echo '4'
-								
+				script {
+					if(fileExists('params.CLIENT_DIR/x64/Release/webrtc-sendrecv-client-2017.exe')) {
+						echo 'WebRTC client executable is found'
+					} else {
+						error 'WebRTC client executable is not found'						
+					}
+				}					
             }
         }
     }
