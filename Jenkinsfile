@@ -12,9 +12,10 @@ pipeline {
             steps {				
 				script {
 					if(fileExists('params.CLIENT_DIR/test')) {
-						echo 'WebRTC client executable is found'
-					} else {
-						error 'WebRTC client executable is not found'						
+						echo '2'
+					}
+					if(fileExists(%params.CLIENT_DIR%'/test')) {
+						echo '3'
 					}
 				}					
             }
