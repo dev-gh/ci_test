@@ -1,11 +1,9 @@
 pipeline {
-    agent {
-        docker { image 'microsoft/nanoserver:latest' }
-    }
+    agent any
     stages {
         stage('Version test') {
             steps {
-                bat 'cmd --version'
+                bat 'docker info'
             }
         }
     }
