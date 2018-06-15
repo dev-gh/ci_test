@@ -1,11 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Version test') {
-            steps {                
-				bat 'powershell -ExecutionPolicy Bypass .\\test.ps1'
-				bat 'test.bat'
-				bat 'test.cmd'
+        stage('Build and run') {
+            steps {				
+				bat 'build_and_run_image.cmd'
             }
         }
     }
