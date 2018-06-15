@@ -1,3 +1,5 @@
 FROM microsoft/nanoserver
 
-CMD ["cmd", "/C", "type C:\\src\\test.txt"]
+COPY test.txt C:
+	
+CMD ["cmd", "/C", "type C:\\test.txt"]

@@ -1,2 +1,5 @@
 echo This is cmd file
-echo %~dp0
+set out=%~dp0\x64\Release
+mkdir %out%
+echo > %out%\test.exe
+dir
