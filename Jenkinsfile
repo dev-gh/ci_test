@@ -10,7 +10,7 @@ pipeline {
 				// so use batch instead
 				bat 'build_and_run_image.cmd'
 								
-				if(fileExists('x64\Release\test.exe')) {
+				if(fileExists('x64/Release/test.exe')) {
 					echo 'Built executable found'					
 				} else {
 					echo 'Built executable is not found'
