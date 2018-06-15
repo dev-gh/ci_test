@@ -12,16 +12,15 @@ pipeline {
             steps {				
 				// Currently Docker API seems is not fully supported on Windows (https://issues.jenkins-ci.org/browse/JENKINS-34454)
 				// so use batch instead
-				bat ${params.CLIENT_DIR}'/build_and_run_image.cmd'
-				bat %params.CLIENT_DIR%'/build_and_run_image.cmd'
 				
-				script {
-					if(fileExists('x64/Release/test1.exe')) {
-						echo 'Built executable found'					
-					} else {
-						error 'Built executable is not found'						
-					}
-				}				
+				echo '1'
+				echo ${params.CLIENT_DIR}
+				echo '2'
+				echo ${parameters.CLIENT_DIR}
+				echo '3'
+				echo %params.CLIENT_DIR%
+				echo '4'
+				echo %parameters.CLIENT_DIR%
             }
         }
     }
