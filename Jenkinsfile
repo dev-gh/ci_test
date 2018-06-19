@@ -6,19 +6,16 @@ pipeline {
     agent any
 		parameters {
         string(name: 'CLIENT_DIR', defaultValue: 'webrtc-proxy', description: 'Directory containing sources and build scripts for WebRTC client')
+		string(name: 'MYDIR', defaultValue: 'mydir', description: 'Directory containing sources and build scripts for WebRTC client')
     }
     stages {
         stage('Build') {
             steps {
-
-				powershell './test.ps1 -param $params.CLIENT_DIR'
 			
-				script {
-					if(fileExists('$params.CLIENT_DIR/test')) {
-						echo '1'
-					}
-				}					
-            }
+				echo "${params.CLIENT_DIR}"
+				echo "${params.MYDIR}"
+
+			}
         }
     }
 }
