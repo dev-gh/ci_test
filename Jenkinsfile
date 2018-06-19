@@ -9,13 +9,16 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps {				
+            steps {
+
+				powershell 'test.ps1 -param $params.CLIENT_DIR'
+			
 				script {
-					if(fileExists('params.CLIENT_DIR/test')) {
-						echo '2'
+					if(fileExists('$params.CLIENT_DIR/test')) {
+						echo '1'
 					}
 					if(fileExists(%params.CLIENT_DIR%'/test')) {
-						echo '3'
+						echo '2'
 					}
 				}					
             }
