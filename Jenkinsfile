@@ -17,9 +17,6 @@ pipeline {
 					if(fileExists('$params.CLIENT_DIR/test')) {
 						echo '1'
 					}
-					if(fileExists(%params.CLIENT_DIR%'/test')) {
-						echo '2'
-					}
 				}					
             }
         }
