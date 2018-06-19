@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
 
-				powershell '.\test.ps1 -param $params.CLIENT_DIR'
+				powershell './test.ps1 -param $params.CLIENT_DIR'
 			
 				script {
 					if(fileExists('$params.CLIENT_DIR/test')) {
